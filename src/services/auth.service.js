@@ -10,6 +10,14 @@ const register = (username, email, password) => {
   });
 };
 
+const reset = (username, email, password) => {
+  return axios.post(API_URL + "reset", {
+    username,
+    email,
+    password,
+  });
+};
+
 const login = (username, password) => {
   return axios
     .post(API_URL + "signin", {
@@ -38,4 +46,5 @@ export default {
   login,
   logout,
   getCurrentUser,
+  reset,
 };

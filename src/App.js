@@ -7,6 +7,7 @@ import AuthService from "./services/auth.service";
 
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Reset from "./components/Reset";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Moderator from "./components/Moderator";
@@ -56,7 +57,7 @@ const App = () => {
           {showModeratorBoard && (
             <li className="nav-item">
               <Link to={"/mod"} className="nav-link">
-                Moderator Board
+                Supervisor Page
               </Link>
             </li>
           )}
@@ -64,7 +65,7 @@ const App = () => {
           {showAdminBoard && (
             <li className="nav-item">
               <Link to={"/admin"} className="nav-link">
-                Admin Board
+                Admin Page
               </Link>
             </li>
           )}
@@ -105,6 +106,7 @@ const App = () => {
           <Route exact path={["/", "/home"]} component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/reset" component={Reset} />
           <Route exact path="/profile" render={(props)=><Profile{...props} callback={user=> setUsername(user)}/>} />
           <Route path="/mod" component={Moderator} />
           <Route path="/admin" component={Admin} />

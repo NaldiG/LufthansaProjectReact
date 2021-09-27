@@ -34,6 +34,12 @@ const Login = (props) => {
     setPassword(password);
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    props.history.push("/reset");
+    window.location.reload();
+  }
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -117,6 +123,7 @@ const Login = (props) => {
           )}
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
+        <button onClick={handleClick} className="btn btn-primary btn-block">Forgot Password</button>
       </div>
     </div>
   );
